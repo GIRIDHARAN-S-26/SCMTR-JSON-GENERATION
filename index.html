@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SICAL CFS - SCMTR JSON Generation Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .dashboard-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #009688;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        .header h1 { margin: 0; color: #00796b; font-size: 24px; }
+        .header p { margin: 5px 0 0 0; color: #666; font-size: 14px; }
+        
+        .section-panel {
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 25px;
+            background: #fafafa;
+        }
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            background: #e0f2f1;
+            padding: 8px 12px;
+            margin: -20px -20px 20px -20px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            border-bottom: 1px solid #b2dfdb;
+            text-transform: uppercase;
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group label {
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        .form-group input, .form-group select {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        .form-group input:focus, .form-group select:focus {
+            border-color: #009688;
+            outline: none;
+        }
+        
+        .action-bar {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .btn {
+            padding: 12px 25px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        .btn-primary { background-color: #009688; color: white; }
+        .btn-primary:hover { background-color: #00796b; }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 11px;
+            color: #888;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="dashboard-container">
+    <div class="header">
+        <h1>JSON UTILITY - ENTER THE DETAILS</h1>
+        <p>SICAL CFS CHENNAI — SCMTR Operational Filing Dashboard</p>
+    </div>
+
+    <div class="section-panel">
+        <div class="section-title">Manifest_Master / Message Head</div>
+        <div class="grid-3">
+            <div class="form-group">
+                <label>SENDER ID (ICEGATE ID)</label>
+                <input type="text" id="sender_id" value="ICEGATEID">
+            </div>
+            <div class="form-group">
+                <label>PORT OF REPORTING</label>
+                <input type="text" id="port_of_reporting" value="INMAA1">
+            </div>
+            <div class="form-group">
+                <label>REPORTING EVENT</label>
+                <input type="text" id="reporting_event" value="ST">
+            </div>
+            <div class="form-group">
+                <label>REPORTING PARTY TYPE</label>
+                <input type="text" id="reporting_party_type" value="C CUSTODIAN" disabled>
+            </div>
+            <div class="form-group">
+                <label>REPORTING PARTY / CUSTODIAN CODE</label>
+                <input type="text" id="custodian_code" value="AALCS0399C">
+            </div>
+            <div class="form-group">
+                <label>REPORTING LOCATION NAME</label>
+                <input type="text" id="reporting_location_name" value="SICAL CFS">
+            </div>
+            <div class="form-group">
+                <label>REPORTING LOCATION CODE</label>
+                <input type="text" id="reporting_location_code" value="INMAA1SMR1">
+            </div>
+            <div class="form-group">
+                <label>AUTHORISED PERSON PAN</label>
+                <input type="text" id="authorised_person_pan" value="DERPS9790K">
+            </div>
+            <div class="form-group">
+                <label>JOB NUMBER / ID</label>
+                <input type="text" id="job_number" value="7031">
+            </div>
+            <div class="form-group">
+                <label>JOB DATE (YYYY-MM-DD)</label>
+                <input type="date" id="job_date" value="2020-01-10">
+            </div>
+        </div>
+    </div>
+
+    <div class="section-panel">
+        <div class="section-title">SB / Container / Equipment Details</div>
+        <div class="grid-3">
+            <div class="form-group">
+                <label>SEQUENCE NO</label>
+                <input type="text" id="eq_seq" value="01">
+            </div>
+            <div class="form-group">
+                <label>CONTAINER ID</label>
+                <input type="text" id="container_id" value="WHSU2834040">
+            </div>
+            <div class="form-group">
+                <label>EQUIPMENT TYPE</label>
+                <input type="text" id="equipment_type" value="BL-BLOCKS">
+            </div>
+            <div class="form-group">
+                <label>LOAD STATUS</label>
+                <input type="text" id="load_status" value="FCL-FULL">
+            </div>
+            <div class="form-group">
+                <label>FINAL DESTINATION</label>
+                <input type="text" id="final_destination" value="INMAA1CCT1">
+            </div>
+            <div class="form-group">
+                <label>EVENT DATE (YYYYMMDDHHMMSS)</label>
+                <input type="text" id="event_date" value="20200110112515">
+            </div>
+            <div class="form-group">
+                <label>EQUIPMENT SEAL (E-SEAL)</label>
+                <input type="text" id="equipment_seal" value="ESSC01188177">
+            </div>
+            <div class="form-group">
+                <label>EQUIPMENT STATUS</label>
+                <input type="text" id="equipment_status" value="94-STUFFED AND SEALED">
+            </div>
+            <div class="form-group">
+                <label>PACKAGE QUANTITY</label>
+                <input type="number" id="package_quantity" value="358">
+            </div>
+        </div>
+    </div>
+
+    <div class="section-panel">
+        <div class="section-title">Cargo Details</div>
+        <div class="grid-3">
+            <div class="form-group">
+                <label>CARGO SEQUENCE NO</label>
+                <input type="text" id="cargo_seq" value="01">
+            </div>
+            <div class="form-group">
+                <label>SHIPMENT LOAD STATUS</label>
+                <input type="text" id="shipment_load_status" value="FULL">
+            </div>
+            <div class="form-group">
+                <label>PACK UQC</label>
+                <input type="text" id="pack_uqc" value="PKG">
+            </div>
+            <div class="form-group">
+                <label>PACKAGE TYPE</label>
+                <input type="text" id="package_type" value="PACKED">
+            </div>
+            <div class="form-group">
+                <label>DOCUMENT TYPE</label>
+                <select id="document_type">
+                    <option value="PCIN">PCIN</option>
+                    <option value="MCIN">MCIN</option>
+                    <option value="EDI_SB" selected>EDI SB</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>MCIN / PCIN / SB NUMBER</label>
+                <input type="text" id="mcin_pcin" value="25PCEG12242905694800">
+            </div>
+            <div class="form-group">
+                <label>QUANTITY</label>
+                <input type="number" id="cargo_quantity" value="358">
+            </div>
+            <div class="form-group">
+                <label>DOCUMENT SITE</label>
+                <input type="text" id="document_site" value="INMAA1">
+            </div>
+            <div class="form-group">
+                <label>DOCUMENT NUMBER</label>
+                <input type="text" id="document_number" value="8164013">
+            </div>
+            <div class="form-group">
+                <label>DOCUMENT DATE (YYYYMMDD)</label>
+                <input type="text" id="document_date" value="20200110">
+            </div>
+        </div>
+    </div>
+
+    <div class="action-bar">
+        <button class="btn btn-primary" onclick="buildAndDownloadJSON()">Generate JSON</button>
+    </div>
+
+    <div class="footer">
+        Copyright © 2026 Design and Developed for SICAL Informatics Center.
+    </div>
+</div>
+
+<script>
+function buildAndDownloadJSON() {
+    // 1. Compile entry fields into standard structural schema
+    const scmtrData = {
+        "Manifest_Master": {
+            "Message_Head": {
+                "SenderID": document.getElementById('sender_id').value,
+                "Reporting_Party_Type": document.getElementById('reporting_party_type').value,
+                "Port_of_Reporting": document.getElementById('port_of_reporting').value,
+                "Job_Number": document.getElementById('job_number').value,
+                "Job_Date": document.getElementById('job_date').value,
+                "Custodian_Code": document.getElementById('custodian_code').value,
+                "Reporting_Location_Name": document.getElementById('reporting_location_name').value,
+                "Reporting_Event": document.getElementById('reporting_event').value,
+                "Reporting_Location_Code": document.getElementById('reporting_location_code').value,
+                "Authorised_Person_PAN": document.getElementById('authorised_person_pan').value
+            },
+            "Equipment_Details": [
+                {
+                    "Sequence_No": document.getElementById('eq_seq').value,
+                    "Container_ID": document.getElementById('container_id').value,
+                    "Equipment_Type": document.getElementById('equipment_type').value,
+                    "Load_Status": document.getElementById('load_status').value,
+                    "Final_Destination": document.getElementById('final_destination').value,
+                    "Event_Date": document.getElementById('event_date').value,
+                    "Equipment_Seal": document.getElementById('equipment_seal').value,
+                    "Equipment_Status": document.getElementById('equipment_status').value,
+                    "Equipment_Package_Quantity": parseInt(document.getElementById('package_quantity').value) || 0
+                }
+            ],
+            "Cargo_Details": [
+                {
+                    "Cargo_Sequence_No": document.getElementById('cargo_seq').value,
+                    "Shipment_Load_Status": document.getElementById('shipment_load_status').value,
+                    "Pack_UQC": document.getElementById('pack_uqc').value,
+                    "Package_Type": document.getElementById('package_type').value,
+                    "MCIN_PCIN": document.getElementById('mcin_pcin').value,
+                    "Quantity": parseInt(document.getElementById('cargo_quantity').value) || 0,
+                    "Document_Site": document.getElementById('document_site').value,
+                    "Document_Number": document.getElementById('document_number').value,
+                    "Document_Date": document.getElementById('document_date').value
+                }
+            ]
+        }
+    };
+
+    // 2. Define fixed wrapper configurations
+    const messageType = "F_";
+    const msgID = "CUCHE01_";
+    const declaration = "_DEC.json";
+
+    // 3. Fetch user inputs dynamically
+    const reportingEvent = document.getElementById('reporting_event').value + "_";
+    const senderID = document.getElementById('sender_id').value + "_";
+    const jobID = document.getElementById('job_number').value + "_";
+    const cleanDate = document.getElementById('job_date').value.replace(/-/g, "");
+
+    // 4. Construct structural naming convention
+    // Target Format: F_CUCHE01_ST_ICEGATEID_7031_20200110_DEC.json
+    const fileName = `${messageType}${msgID}${reportingEvent}${senderID}${jobID}${cleanDate}${declaration}`;
+
+    // 5. Trigger download routing
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(scmtrData, null, 4));
+    const downloadAnchor = document.createElement('a');
+    downloadAnchor.setAttribute("href", dataStr);
+    downloadAnchor.setAttribute("download", fileName);
+    document.body.appendChild(downloadAnchor);
+    downloadAnchor.click();
+    downloadAnchor.remove();
+
+    alert("JSON Generated Successfully!\nSaved As: " + fileName);
+}
+</script>
+
+</body>
+</html>
